@@ -1,16 +1,17 @@
 # Personal Portfolio Website
 
-A modern, responsive portfolio website built with Flask, featuring a noisy gradient background and clean design.
+A modern, responsive portfolio website built with Flask, featuring a clean design with dark/light mode support.
 
 ## Features
 
 - Responsive design that works on all devices
 - Modern UI with smooth animations
-- Noisy gradient background for visual interest
+- Dark/light mode toggle with system preference detection
 - Sections for:
   - Home/Introduction
   - Resume/Experience
   - Projects showcase
+  - Contact form
   - Skills and certifications
 
 ## Setup
@@ -48,6 +49,7 @@ python app.py
    - `templates/index.html`
    - `templates/resume.html`
    - `templates/projects.html`
+   - `templates/contact.html`
 
 2. Modify the styling in `static/css/style.css`
 
@@ -66,7 +68,8 @@ portfolio/
     ├── base.html      # Base template
     ├── index.html     # Home page
     ├── resume.html    # Resume page
-    └── projects.html  # Projects page
+    ├── projects.html  # Projects page
+    └── contact.html   # Contact page
 ```
 
 ## License
