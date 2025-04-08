@@ -3,6 +3,25 @@
     --text-color: #1f2937;
     --bg-color: #f3f4f6;
     --nav-bg: rgba(255, 255, 255, 0.9);
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --secondary-bg: #e5e7eb;
+    --secondary-text: #4b5563;
+    --border-color: rgba(0, 0, 0, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --shadow-strength: 0 4px 6px;
+}
+
+[data-theme="dark"] {
+    --primary-color: #60a5fa;
+    --text-color: #f3f4f6;
+    --bg-color: #111827;
+    --nav-bg: rgba(17, 24, 39, 0.9);
+    --card-bg: rgba(31, 41, 55, 0.9);
+    --secondary-bg: #374151;
+    --secondary-text: #d1d5db;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --shadow-strength: 0 4px 8px;
 }
 
 * {
@@ -15,9 +34,10 @@ body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+    background: linear-gradient(135deg, var(--bg-color) 0%, var(--secondary-bg) 100%);
     position: relative;
     min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body::before {
@@ -41,7 +61,8 @@ body::before {
     left: 0;
     right: 0;
     z-index: 1000;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-strength) var(--shadow-color);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .nav-content {
@@ -90,16 +111,18 @@ body::before {
     background: var(--nav-bg);
     backdrop-filter: blur(10px);
     margin-top: 4rem;
+    transition: background-color 0.3s ease;
 }
 
 /* Card styles */
 .card {
-    background: rgba(255, 255, 255, 0.9);
+    background: var(--card-bg);
     border-radius: 1rem;
     padding: 2rem;
     margin-bottom: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-strength) var(--shadow-color);
     backdrop-filter: blur(10px);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Responsive design */
@@ -113,6 +136,10 @@ body::before {
         flex-direction: column;
         gap: 1rem;
         text-align: center;
+    }
+    
+    .theme-toggle {
+        margin-top: 0.5rem;
     }
 }
 
@@ -130,7 +157,7 @@ body::before {
 
 .lead {
     font-size: 1.25rem;
-    color: #4b5563;
+    color: var(--secondary-text);
     margin-bottom: 2rem;
 }
 
@@ -150,13 +177,13 @@ body::before {
 }
 
 .btn-secondary {
-    background: #e5e7eb;
+    background: var(--secondary-bg);
     color: var(--text-color);
 }
 
 .btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-strength) var(--shadow-color);
 }
 
 /* Skills section */
@@ -203,7 +230,7 @@ body::before {
 
 .company, .school {
     font-weight: 500;
-    color: #4b5563;
+    color: var(--secondary-text);
 }
 
 .date {
@@ -221,11 +248,11 @@ body::before {
 }
 
 .project-card {
-    background: white;
+    background: var(--card-bg);
     border-radius: 1rem;
     padding: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    box-shadow: var(--shadow-strength) var(--shadow-color);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
@@ -239,11 +266,12 @@ body::before {
 .tech-tag {
     display: inline-block;
     padding: 0.25rem 0.75rem;
-    background: #e5e7eb;
+    background: var(--secondary-bg);
     border-radius: 1rem;
     font-size: 0.875rem;
     margin-right: 0.5rem;
     margin-bottom: 0.5rem;
+    color: var(--text-color);
 }
 
 .project-links {
@@ -265,4 +293,42 @@ body::before {
     .skills-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Theme toggle button */
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    color: var(--primary-color);
+}
+
+.theme-toggle svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.theme-toggle .sun-icon {
+    display: none;
+}
+
+.theme-toggle .moon-icon {
+    display: block;
+}
+
+[data-theme="dark"] .theme-toggle .sun-icon {
+    display: block;
+}
+
+[data-theme="dark"] .theme-toggle .moon-icon {
+    display: none;
 } 
