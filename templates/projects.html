@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Projects{% endblock %}
+
+{% block content %}
+<div class="projects-container">
+    <div class="card">
+        <h1>Featured Projects</h1>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Project Name 1</h3>
+                <p class="project-description">
+                    A brief description of the project and its key features. Explain what problems it solves
+                    and what technologies were used.
+                </p>
+                <div class="project-tech">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Flask</span>
+                    <span class="tech-tag">React</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="btn btn-primary">View Demo</a>
+                    <a href="#" class="btn btn-secondary">GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>Project Name 2</h3>
+                <p class="project-description">
+                    Another project description highlighting your skills and the impact of your work.
+                    Include metrics or results if available.
+                </p>
+                <div class="project-tech">
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">MongoDB</span>
+                    <span class="tech-tag">AWS</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" class="btn btn-primary">View Demo</a>
+                    <a href="#" class="btn btn-secondary">GitHub</a>
+                </div>
+            </div>
+
+            <!-- Add more project cards as needed -->
+        </div>
+    </div>
+</div>
+{% endblock %} 

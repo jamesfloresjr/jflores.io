@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <div class="card">
+        <h1>Welcome to My Portfolio</h1>
+        <p class="lead">I'm a passionate developer focused on creating innovative solutions and delivering high-quality software.</p>
+        <div class="cta-buttons">
+            <a href="{{ url_for('resume') }}" class="btn btn-primary">View Resume</a>
+            <a href="{{ url_for('projects') }}" class="btn btn-secondary">See Projects</a>
+        </div>
+    </div>
+</div>
+
+<div class="skills-section">
+    <div class="card">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Languages</h3>
+                <ul>
+                    <li>Python</li>
+                    <li>JavaScript</li>
+                    <li>HTML/CSS</li>
+                    <!-- Add more languages -->
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Frameworks</h3>
+                <ul>
+                    <li>Flask</li>
+                    <li>React</li>
+                    <li>Node.js</li>
+                    <!-- Add more frameworks -->
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Tools</h3>
+                <ul>
+                    <li>Git</li>
+                    <li>Docker</li>
+                    <li>AWS</li>
+                    <!-- Add more tools -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

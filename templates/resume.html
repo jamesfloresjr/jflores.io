@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Resume{% endblock %}
+
+{% block content %}
+<div class="resume-container">
+    <div class="card">
+        <h1>Professional Experience</h1>
+        <div class="timeline">
+            <div class="timeline-item">
+                <h3>Software Engineer</h3>
+                <p class="company">Company Name</p>
+                <p class="date">2022 - Present</p>
+                <ul>
+                    <li>Developed and maintained web applications using Python and Flask</li>
+                    <li>Implemented RESTful APIs and microservices architecture</li>
+                    <li>Collaborated with cross-functional teams to deliver high-quality software</li>
+                </ul>
+            </div>
+            <!-- Add more experience items -->
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Education</h2>
+        <div class="education-item">
+            <h3>Bachelor of Science in Computer Science</h3>
+            <p class="school">University Name</p>
+            <p class="date">2018 - 2022</p>
+            <p>Relevant coursework: Data Structures, Algorithms, Software Engineering, Database Systems</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Certifications</h2>
+        <ul class="certifications-list">
+            <li>AWS Certified Developer - Associate</li>
+            <li>Google Cloud Professional Cloud Developer</li>
+            <!-- Add more certifications -->
+        </ul>
+    </div>
+</div>
+{% endblock %} 
