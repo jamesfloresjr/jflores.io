@@ -190,17 +190,17 @@ body {
     margin-bottom: 1rem;
 }
 
-.skill-category ul {
+ul {
     list-style: none;
 }
 
-.skill-category li {
+li {
     margin-bottom: 0.5rem;
     padding-left: 1.5rem;
     position: relative;
 }
 
-.skill-category li::before {
+li::before {
     content: "•";
     color: var(--primary-color);
     position: absolute;
@@ -208,13 +208,13 @@ body {
 }
 
 /* Resume page */
-.timeline-item {
+.timeline-item, .education-item, .certifications-item {
     margin-bottom: 2rem;
     padding-left: 2rem;
     border-left: 2px solid var(--primary-color);
 }
 
-.timeline-item h3 {
+.timeline-item h3, .education-item h3, .certifications-item h3 {
     color: var(--primary-color);
     margin-bottom: 0.5rem;
 }
@@ -229,6 +229,33 @@ body {
     font-size: 0.9rem;
     margin-bottom: 1rem;
 }
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.certification-card {
+    background: var(--card-bg);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: var(--shadow-strength) var(--shadow-color);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certification-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.certification-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
 
 /* Projects page */
 .projects-grid {
@@ -406,4 +433,27 @@ body {
 .form-actions .btn:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-strength) var(--shadow-color);
-} 
+}
+
+/* Social links - updated styling */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.social-link {
+    color: var(--text-color);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.social-link svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
