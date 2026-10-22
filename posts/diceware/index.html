@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diceware | James Flores</title>
+  <meta name="description" content="Create a secure passphrase with my Diceware Python script. It simulates dice rolls so you don&#x27;t have to!" />
+  <meta name="author" content="James Flores" />
+  <link rel="canonical" href="https://jflores.io/posts/diceware/" />
+  <meta property="og:title" content="Diceware | James Flores" />
+  <meta property="og:description" content="Create a secure passphrase with my Diceware Python script. It simulates dice rolls so you don&#x27;t have to!" />
+  <meta property="og:url" content="https://jflores.io/posts/diceware/" />
+  <meta property="og:site_name" content="James Flores" />
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content="2022-09-29T11:11:00-05:00" />
+  <meta property="og:image" content="https://jflores.io/assets/img/banners/secure.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Diceware", "description": "Create a secure passphrase with my Diceware Python script. It simulates dice rolls so you don't have to!", "datePublished": "2022-09-29T11:11:00-05:00", "url": "https://jflores.io/posts/diceware/", "author": {"@type": "Person", "name": "James Flores"}, "image": "https://jflores.io/assets/img/banners/secure.png"}</script>
+  <meta name="theme-color" content="#0e0f11" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script>
+    // Before first paint: the theme you picked last time, if any.
+    (function () {
+      var root = document.documentElement;
+      root.classList.add('js');
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') root.dataset.theme = saved;
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></symbol>
+    <symbol id="i-badge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="m8.5 13.9-1.5 8.1 5-3 5 3-1.5-8.1"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></symbol>
+  </defs>
+</svg>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="monogram" href="/" aria-label="James Flores, home">jf</a>
+      <nav class="nav" aria-label="Main">
+        <a href="/#projects">Projects</a>
+        <a href="/blog/" aria-current="page">Blog</a>
+        <a class="hide-sm" href="https://github.com/jamesfloresjr" rel="noopener">GitHub</a>
+        <button class="theme-toggle" type="button" aria-label="Switch between light and dark">
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+<article class="post">
+  <header class="post-head">
+    <div class="backdrop" aria-hidden="true"></div>
+    <div class="wrap narrow">
+      <a class="back" href="/blog/">← All posts</a>
+      <h1>Diceware</h1>
+      <p class="post-meta">
+        <time datetime="2022-09-29T11:11:00-05:00">September 29, 2022</time> <span aria-hidden="true">·</span> <span>4 min read</span> <span aria-hidden="true">·</span> <span>Tutorial</span>
+      </p>
+      <ul class="tags"><li>python</li><li>streamlit</li></ul>
+    </div>
+  </header>
+
+  <div class="wrap narrow">
+    <img class="post-banner" src="/assets/img/banners/secure.png" alt="" width="1200" height="630">
+    <div class="prose">
+<h2 id="what-is-diceware">What is Diceware?</h2>
+<blockquote>
+<p>Diceware™ is a method for picking passphrases that uses ordinary dice to select words at random from a special list called the Diceware Word List. Each word in the list is preceded by a five digit number. All the digits are between one and six, allowing you to use the outcomes of five dice rolls to select a word from the list.<sup class="footnote-ref"><a href="#fn1" id="fnref1">1</a></sup></p>
+</blockquote>
+<p>Here’s what a Diceware word list looks like:</p>
+<div class="language-plaintext highlighter-rouge" file="diceware.txt"><div class="highlight"><pre class="highlight"><code>...
+16655 clause
+16656 claw
+16661 clay
+16662 clean
+16663 clear
+16664 cleat
+16665 cleft
+16666 clerk
+21111 cliche
+21112 click
+...
+</code></pre></div></div>
+<p>The complete list contains 7776 unique words. I’ve posted the one I use on my GitHub. You can download it <a href="https://github.com/jamesfloresjr/diceware/blob/main/diceware.txt">here</a>.</p>
+<h2 id="breaking-it-down">Breaking it down</h2>
+<p>Objective: Create a secure password</p>
+<ol>
+<li>Roll a die five times to create a five digit number (eg. 52334)</li>
+<li>Get a special char and a number</li>
+<li>Correlate roll to a word in the word list</li>
+<li>Profit</li>
+</ol>
+<h2 id="code">Code</h2>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span><span class="w"> </span><span class="nn">random</span><span class="o">,</span><span class="w"> </span><span class="nn">string</span>
+</code></pre></div></div>
+<p>As you can see, the only libraries you’ll need to import are <code>random</code> and <code>string</code>. Random for the simulated die rolls and string so we don’t have to type out all the special characters.</p>
+<h3 id="main-function">Main function</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span><span class="w"> </span><span class="nf">generate_password</span><span class="p">():</span>
+    <span class="n">passwd</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">num</span> <span class="o">=</span> <span class="mi">3</span>
+
+    <span class="c1"># Generate a random number between 1 and 999</span>
+    <span class="n">rand_num</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">999</span><span class="p">))</span>
+
+    <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+        <span class="c1"># Generate 5 random numbers between 1 and 6</span>
+        <span class="n">roll</span> <span class="o">=</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)])</span>
+        <span class="n">word</span> <span class="o">=</span> <span class="n">wl_dict</span><span class="p">[</span><span class="n">roll</span><span class="p">]</span>
+
+        <span class="c1"># Randomly capitalizes the current word</span>
+        <span class="k">if</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">word</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+
+        <span class="c1"># Appends word to array</span>
+        <span class="n">passwd</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+
+        <span class="c1"># Generate a random special character</span>
+        <span class="n">passwd</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">))</span>
+
+    <span class="c1"># Concatenate the words, number, and special character to form the password</span>
+    <span class="n">final_pw</span> <span class="o">=</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">passwd</span><span class="p">)</span> <span class="o">+</span> <span class="n">rand_num</span>
+
+    <span class="k">return</span> <span class="n">final_pw</span>
+</code></pre></div></div>
+<p>The <code>num</code> variable allows us to specify how many words we want in our password. For me, three is the sweet spot. Next we generate a random number between 1-999. Finally, we get to our beefy for loop.</p>
+<ul>
+<li><code>roll</code>: simulates our die roll resulting in a five digit number</li>
+<li><code>word</code>: searches our dictionary and stores the word in our variable</li>
+</ul>
+<p>The if statement basically does a coin flip and will capitalize the word if it rolls a one. The two lines below the if statement append the selected word and a random special character to our empty <code>passwd</code> array. At the end our <code>passwd</code> variable will look like <strong>[‘Junkie’, ‘~’, ‘undivided’, ‘%’, ‘Disorder’, ‘#’]</strong></p>
+<ul>
+<li><code>final_pw</code>: joins all of the elements in the <code>passwd</code> array into one string and adds our random number (ie. <strong>“Junkie~undivided%Disorder#943”</strong>)</li>
+</ul>
+<h3 id="creating-our-word-list-dictionary">Creating our word list dictionary</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Load the diceware word list</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"diceware.txt"</span><span class="p">,</span> <span class="s2">"r"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">wl</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">]</span>
+
+<span class="n">wl_dict</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">wl</span><span class="p">)):</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="n">wl</span><span class="p">[</span><span class="n">line</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">"</span><span class="se">\t</span><span class="s2">"</span><span class="p">)</span>
+    <span class="n">wl_dict</span><span class="p">[</span><span class="n">l</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">l</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></div></div>
+<p>This part used to be way longer and over complicated for no reason. But, I fixed it. While our file is open we create the array <code>wl</code> which contains every line. However, our file has tabs in it for some reason so we can’t just split it normally. Instead we’ll create an empty dictionary and a for loop. In our for loop we can iterate line by line and split by that tab with <code>\t</code>. Then we just append to our dictionary <code>wl_dict</code> with the key being the number <code>l[0]</code> and value being the word <code>l[1]</code>.</p>
+<h3 id="calling-our-function">Calling our function</h3>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">print</span><span class="p">(</span><span class="s2">"Password = "</span> <span class="o">+</span> <span class="n">generate_password</span><span class="p">())</span>
+</code></pre></div></div>
+<p>Finally, we call our function which returns our finished password and print.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>If you made it this far, you now have to go and change all your passwords. I hope you’re not reusing the same password for everything. <em>Tisk</em> <em>Tisk</em> <em>Tisk</em>. If you want a video tutorial, the YouTube channel Computerphile<sup class="footnote-ref"><a href="#fn2" id="fnref2">2</a></sup> has a great video going over this topic. If you just want to run the script and not have to worry about all the coding, download it from my GitHub<sup class="footnote-ref"><a href="#fn3" id="fnref3">3</a></sup> or run the web app I spent way too long on above.</p>
+<h4 id="links">Links</h4>
+<hr class="footnotes-sep" />
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p><a href="https://theworld.com/~reinhold/diceware.html">The Diceware Passphrase Home Page</a> <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn2" class="footnote-item"><p><a href="https://www.youtube.com/watch?v=Pe_3cFuSw1E">Diceware &amp; Passwords - Computerphile</a> <a href="#fnref2" class="footnote-backref">↩︎</a></p>
+</li>
+<li id="fn3" class="footnote-item"><p><a href="https://github.com/jamesfloresjr/diceware">Check it out on GitHub!</a> <a href="#fnref3" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+    </div>
+
+    <nav class="post-nav" aria-label="More posts">
+      <span></span>
+      <a class="next" href="/posts/filecloud-incompatible-cpu/"><span>Newer →</span><strong>FileCloud - MongoDB connection failed</strong></a>
+    </nav>
+  </div>
+</article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© <span data-year>2026</span> James Flores</p>
+      <nav aria-label="Elsewhere">
+        <a href="https://github.com/jamesfloresjr" rel="noopener">GitHub</a>
+        <a href="/blog/">Blog</a>
+        <a href="https://www.credly.com/users/james-flores.373c9444/badges" rel="noopener">Credly</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="/script.js" defer></script>
+</body>
+</html>
