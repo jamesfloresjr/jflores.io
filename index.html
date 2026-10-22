@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>James Flores — Systems Engineer</title>
+  <meta name="description" content="James Flores is a systems engineer and Air Force veteran in Texas, working in automation, cybersecurity and homelab infrastructure.">
+  <meta name="theme-color" content="#0e0f11" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f7f5f0" media="(prefers-color-scheme: light)">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="James Flores — Systems Engineer">
+  <meta property="og:description" content="Automation, cybersecurity and homelab projects.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // Before first paint: the theme you picked last time, if any.
+    (function () {
+      var root = document.documentElement;
+      root.classList.add('js');
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') root.dataset.theme = saved;
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.6 22.4c.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .5z"/></symbol>
+      <symbol id="i-pen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></symbol>
+      <symbol id="i-badge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="m8.5 13.9-1.5 8.1 5-3 5 3-1.5-8.1"/></symbol>
+      <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></symbol>
+      <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></symbol>
+    </defs>
+  </svg>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="monogram" href="#top" aria-label="James Flores, back to top">jf</a>
+      <nav class="nav" aria-label="Main">
+        <a href="#projects">Projects</a>
+        <a href="#writing">Writing</a>
+        <a class="hide-sm" href="https://github.com/jamesfloresjr" rel="noopener">GitHub</a>
+        <button class="theme-toggle" type="button" aria-label="Switch between light and dark">
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <section class="intro">
+      <div class="backdrop" aria-hidden="true"></div>
+      <div class="wrap">
+        <p class="prompt" aria-hidden="true">~$ whoami<span class="cursor"></span></p>
+        <h1>James Flores<span>,</span><br><span>systems engineer.</span></h1>
+        <p class="lead">I'm an <strong>Air Force veteran</strong> and systems engineer with a passion for <strong>automation</strong>, <strong>cybersecurity</strong> and the cloud. I build tools in Python and PowerShell that solve real problems, keep fleets of Windows and Linux machines in line, and write about what I learn in my homelab.</p>
+        <ul class="facts" aria-label="At a glance">
+          <li>Texas</li>
+          <li>PowerShell · Ansible</li>
+          <li>Python · Flask</li>
+          <li>Docker · Proxmox</li>
+          <li>Cyber defense</li>
+        </ul>
+        <div class="buttons">
+          <a class="btn primary" href="#projects"><svg aria-hidden="true"><use href="#i-code"/></svg>See my projects</a>
+          <a class="btn" href="https://github.com/jamesfloresjr" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>GitHub</a>
+          <a class="btn" href="https://jflores.blog" rel="noopener"><svg aria-hidden="true"><use href="#i-pen"/></svg>Blog</a>
+          <a class="btn" href="https://www.credly.com/users/james-flores.373c9444/badges" rel="noopener"><svg aria-hidden="true"><use href="#i-badge"/></svg>Certifications</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects, oldest first (by when each repository was created). -->
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2><span class="label">// projects</span>Things I've built</h2>
+          <p>In the order I started them.</p>
+        </div>
+
+        <ol class="timeline">
+
+          <li class="project reveal">
+            <article class="project-card">
+              <div class="project-top">
+                <time datetime="2021-04-09">Apr 2021</time>
+                <h3><a href="https://github.com/jamesfloresjr/diceware" rel="noopener">diceware</a></h3>
+              </div>
+              <p>A Python script that makes secure, memorable passphrases the Diceware way: it simulates the dice rolls, picks words from a wordlist, and mixes in random separators, numbers and capitals.</p>
+              <div class="project-bottom">
+                <ul class="tags"><li class="lang" style="--dot:#3572a5">Python</li><li>Security</li></ul>
+                <div class="links">
+                  <a href="https://jflores.blog/posts/diceware/" rel="noopener"><svg aria-hidden="true"><use href="#i-book"/></svg>Write-up</a>
+                  <a href="https://github.com/jamesfloresjr/diceware" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>Source</a>
+                </div>
+              </div>
+            </article>
+          </li>
+
+          <li class="project reveal">
+            <article class="project-card">
+              <div class="project-top">
+                <time datetime="2022-09-30">Sep 2022</time>
+                <h3><a href="https://jflores.blog" rel="noopener">blog</a></h3>
+              </div>
+              <p>My technical blog on homelab automation, cybersecurity and systems engineering: practical guides for Proxmox, Docker, Home Assistant and the scripts that tie them together. Built with Jekyll.</p>
+              <div class="project-bottom">
+                <ul class="tags"><li class="lang" style="--dot:#c6538c">Jekyll</li><li>Homelab</li><li>Writing</li></ul>
+                <div class="links">
+                  <a href="https://jflores.blog" rel="noopener"><svg aria-hidden="true"><use href="#i-external"/></svg>Read the blog</a>
+                  <a href="https://github.com/jamesfloresjr/blog" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>Source</a>
+                </div>
+              </div>
+            </article>
+          </li>
+
+          <li class="project reveal">
+            <article class="project-card">
+              <div class="project-top">
+                <time datetime="2024-11-07">Nov 2024</time>
+                <h3><a href="https://github.com/jamesfloresjr/ansible-role-win-install-software" rel="noopener">ansible-role-win-install-software</a></h3>
+              </div>
+              <p>An Ansible role that installs and updates software on Windows hosts in an air-gapped network, from a versioned repository on a file share, with per-app installer arguments and a preference for EXE or MSI.</p>
+              <div class="project-bottom">
+                <ul class="tags"><li class="lang" style="--dot:#5391fe">PowerShell</li><li>Ansible</li><li>Windows</li><li>Air-gapped</li></ul>
+                <div class="links">
+                  <a href="https://github.com/jamesfloresjr/ansible-role-win-install-software" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>Source</a>
+                </div>
+              </div>
+            </article>
+          </li>
+
+          <li class="project reveal">
+            <article class="project-card">
+              <div class="project-top">
+                <time datetime="2025-01-29">Jan 2025</time>
+                <h3><a href="https://github.com/jamesfloresjr/flask-file-tracker" rel="noopener">flask-file-tracker</a></h3>
+              </div>
+              <p>A file pipeline with a dashboard: a monitor watches a drop folder, hashes each file, routes it by name to where it belongs and retries failures, while a Flask app shows what's in progress, done or failed. Runs in Docker.</p>
+              <div class="project-bottom">
+                <ul class="tags"><li class="lang" style="--dot:#3572a5">Python</li><li>Flask</li><li>SQLAlchemy</li><li>Docker</li></ul>
+                <div class="links">
+                  <a href="https://github.com/jamesfloresjr/flask-file-tracker" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>Source</a>
+                </div>
+              </div>
+            </article>
+          </li>
+
+          <li class="project reveal">
+            <article class="project-card">
+              <div class="project-top">
+                <time datetime="2025-02-07">Feb 2025</time>
+                <h3><a href="https://github.com/jamesfloresjr/group-policy" rel="noopener">group-policy</a></h3>
+              </div>
+              <p>PowerShell that takes the pain out of the quarterly DISA STIG GPO release: it unpacks the package, sorts the ADMX templates and GPOs, drops duplicates and anything you filter out, and imports the rest, labeled and commented.</p>
+              <div class="project-bottom">
+                <ul class="tags"><li class="lang" style="--dot:#5391fe">PowerShell</li><li>Group Policy</li><li>DISA STIG</li></ul>
+                <div class="links">
+                  <a href="https://github.com/jamesfloresjr/group-policy" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>Source</a>
+                </div>
+              </div>
+            </article>
+          </li>
+
+          <li class="project reveal">
+            <article class="project-card">
+              <div class="project-top">
+                <time datetime="2026-09-17">Sep 2026</time>
+                <h3><a href="https://chameleon.jumpingfox.dev" rel="noopener">chameleon</a></h3>
+              </div>
+              <p>A free, deeply customizable Jellyfin client for Android TV, Google TV, phones and tablets, built with Flutter. Dolby Vision and HDR, lossless audio passthrough, trailer previews, themes and any Google Font, with no ads and no paywall.</p>
+              <div class="project-bottom">
+                <ul class="tags"><li class="lang" style="--dot:#00b4ab">Dart</li><li>Flutter</li><li>Android TV</li><li>Jellyfin</li></ul>
+                <div class="links">
+                  <a href="https://chameleon.jumpingfox.dev" rel="noopener"><svg aria-hidden="true"><use href="#i-external"/></svg>Visit the site</a>
+                  <a href="https://github.com/jumpingfox-dev/chameleon" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>Source</a>
+                </div>
+              </div>
+            </article>
+          </li>
+
+          <li class="project reveal">
+            <article class="project-card">
+              <div class="project-top">
+                <time datetime="2026-10-22">Oct 2026</time>
+                <h3><a href="https://chameleon.jumpingfox.dev" rel="noopener">chameleon-website</a></h3>
+              </div>
+              <p>The website and privacy policy for Chameleon, a free Jellyfin client for Android TV, phones and tablets: a landing page in the app's own look, with screenshots, a theme preview and a full-size gallery.</p>
+              <div class="project-bottom">
+                <ul class="tags"><li class="lang" style="--dot:#e34c26">HTML</li><li>CSS</li><li>GitHub Pages</li></ul>
+                <div class="links">
+                  <a href="https://chameleon.jumpingfox.dev" rel="noopener"><svg aria-hidden="true"><use href="#i-external"/></svg>Visit the site</a>
+                  <a href="https://github.com/jumpingfox-dev/chameleon-website" rel="noopener"><svg aria-hidden="true"><use href="#i-github"/></svg>Source</a>
+                </div>
+              </div>
+            </article>
+          </li>
+
+        </ol>
+      </div>
+    </section>
+
+    <section id="writing">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <h2><span class="label">// writing</span>From the blog</h2>
+          <p>Guides and fixes from my homelab.</p>
+        </div>
+        <ul class="posts reveal">
+          <li><a href="https://jflores.blog/posts/home-assistant-nest-doorbell-notifications/" rel="noopener"><strong>Home Assistant: Nest Doorbell notifications</strong><span>Embedding a GIF from a Nest Doorbell in a Home Assistant notification.</span><span class="arrow" aria-hidden="true">→</span></a></li>
+          <li><a href="https://jflores.blog/posts/watchtower-remote-host/" rel="noopener"><strong>Watchtower: monitor remote hosts</strong><span>Keeping containers on a remote Docker host up to date.</span><span class="arrow" aria-hidden="true">→</span></a></li>
+          <li><a href="https://jflores.blog/posts/proxmox-template/" rel="noopener"><strong>Proxmox: an Ubuntu Server template</strong><span>Stop building VMs from scratch.</span><span class="arrow" aria-hidden="true">→</span></a></li>
+          <li><a href="https://jflores.blog/posts/filecloud-indefinite-login/" rel="noopener"><strong>FileCloud: login loads indefinitely</strong><span>Fixing the admin login hang before HTTPS is set up.</span><span class="arrow" aria-hidden="true">→</span></a></li>
+          <li><a href="https://jflores.blog/posts/filecloud-incompatible-cpu/" rel="noopener"><strong>FileCloud: "Incompatible CPU"</strong><span>Installing on older CPUs and virtualized setups.</span><span class="arrow" aria-hidden="true">→</span></a></li>
+          <li><a href="https://jflores.blog/posts/diceware/" rel="noopener"><strong>Diceware</strong><span>A secure passphrase, without rolling the dice yourself.</span><span class="arrow" aria-hidden="true">→</span></a></li>
+        </ul>
+        <p class="more reveal"><a href="https://jflores.blog" rel="noopener">All posts on jflores.blog →</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© <span data-year>2026</span> James Flores</p>
+      <nav aria-label="Elsewhere">
+        <a href="https://github.com/jamesfloresjr" rel="noopener">GitHub</a>
+        <a href="https://jflores.blog" rel="noopener">Blog</a>
+        <a href="https://www.credly.com/users/james-flores.373c9444/badges" rel="noopener">Credly</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
